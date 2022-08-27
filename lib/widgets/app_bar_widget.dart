@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import '../styles/AppTheme.dart';
 
 class AppBarWidget extends StatefulWidget {
   const AppBarWidget({
@@ -20,6 +23,14 @@ class AppBarWidgetState extends State<AppBarWidget> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      systemOverlayStyle: SystemUiOverlayStyle(
+        // Status bar color
+        statusBarColor: Colors.yellow,
+
+        // Status bar brightness (optional)
+        statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
+        statusBarBrightness: Brightness.light, // For iOS (dark icons)
+      ),
       key: appBar_key,
       flexibleSpace: SafeArea(
         child: Padding(
@@ -73,15 +84,15 @@ class AppBarWidgetState extends State<AppBarWidget> {
               ElevatedButton(
                   child: Text(
                       "Balance",
-                      style: TextStyle(fontSize: 12)
+                      style: TextStyle(fontSize: 12, fontFamily: "Roboto")
                   ),
                   style: ButtonStyle(
                       foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                      backgroundColor: MaterialStateProperty.all<Color>(Colors.deepPurple),
+                      backgroundColor: MaterialStateProperty.all<Color>(AppTheme.blueColor),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                               borderRadius: BorderRadius.all(Radius.circular(24)),
-                              side: BorderSide(color: Colors.deepPurple)
+                              side: BorderSide(color: AppTheme.blueColor)
                           )
                       )
                   ),

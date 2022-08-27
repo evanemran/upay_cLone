@@ -77,4 +77,7 @@ class AppTheme{
 
   static final TextStyle callIconText =
   TextStyle(fontSize: 16.0,fontWeight:FontWeight.normal, color: Colors.pink,fontFamily: "Roboto");
+
+  //colors
+  static final Color blueColor = Color(0xff0054A6);
 }

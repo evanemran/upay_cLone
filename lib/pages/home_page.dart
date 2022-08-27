@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:upay/styles/AppTheme.dart';
 
 import '../widgets/home_body_widget.dart';
 
@@ -23,7 +24,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
-  Color item1color = Colors.deepPurple;
+  Color item1color = AppTheme.blueColor;
   Color item2color = Colors.grey;
   Color item3color = Colors.grey;
   Color item4color = Colors.grey;
@@ -50,23 +51,23 @@ class _MyHomePageState extends State<MyHomePage> {
             label: 'History',
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(const AssetImage("assets/account.png"), color: item2color, size: 24,),
+            icon: ImageIcon(const AssetImage("assets/account.png"), color: item3color, size: 24,),
             label: 'Account',
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(const AssetImage("assets/bell.png"), color: item3color, size: 24,),
+            icon: ImageIcon(const AssetImage("assets/bell.png"), color: item4color, size: 24,),
             label: 'Notification',
           ),
           BottomNavigationBarItem(
-            icon: ImageIcon(const AssetImage("assets/menu.png"), color: item4color, size: 24,),
+            icon: ImageIcon(const AssetImage("assets/menu.png"), color: item5color, size: 24,),
             label: 'More',
           ),
         ],
         currentIndex: _selectedIndex,
         backgroundColor: Colors.white,
-        selectedItemColor: Colors.deepPurple,
+        selectedItemColor: AppTheme.blueColor,
         showSelectedLabels: true,
-        selectedIconTheme: const IconThemeData(color: Colors.deepPurple),
+        selectedIconTheme: IconThemeData(color: AppTheme.blueColor),
         unselectedIconTheme: const IconThemeData(color: Colors.grey),
         onTap: _onItemTapped,
       ), // This trailing comma makes auto-formatting nicer for build methods.
@@ -78,34 +79,39 @@ class _MyHomePageState extends State<MyHomePage> {
       _selectedIndex = index;
       switch (index) {
         case 0:
-          item1color = Colors.deepPurple;
+          item1color = AppTheme.blueColor;
           item2color = Colors.grey;
           item3color = Colors.grey;
           item4color = Colors.grey;
+          item5color = Colors.grey;
           break;
         case 1:
           item1color = Colors.grey;
-          item2color = Colors.deepPurple;
+          item2color = AppTheme.blueColor;
           item3color = Colors.grey;
           item4color = Colors.grey;
+          item5color = Colors.grey;
           break;
         case 2:
           item1color = Colors.grey;
           item2color = Colors.grey;
-          item3color = Colors.deepPurple;
+          item3color = AppTheme.blueColor;
           item4color = Colors.grey;
+          item5color = Colors.grey;
           break;
         case 3:
           item1color = Colors.grey;
           item2color = Colors.grey;
           item3color = Colors.grey;
-          item4color = Colors.deepPurple;
+          item4color = AppTheme.blueColor;
+          item5color = Colors.grey;
           break;
         case 4:
           item1color = Colors.grey;
           item2color = Colors.grey;
           item3color = Colors.grey;
-          item4color = Colors.deepPurple;
+          item4color = Colors.grey;
+          item5color = AppTheme.blueColor;
           break;
       }
     });
